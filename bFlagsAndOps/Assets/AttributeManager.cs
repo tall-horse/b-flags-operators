@@ -48,6 +48,22 @@ public class AttributeManager : MonoBehaviour
         {
             attributes |= INVISIBLE;
         }
+        if(other.gameObject.CompareTag("ANTIMAGIC"))
+        {
+            attributes &= ~MAGIC;
+        }
+        if(other.gameObject.CompareTag("ADDINTMAGCHAR"))
+        {
+            attributes |= (INTELLIGENCE | MAGIC | CHARISMA);
+        }
+        if(other.gameObject.CompareTag("REMOVEINTMAG"))
+        {
+            attributes &= ~(INTELLIGENCE | MAGIC);
+        }
+        if(other.gameObject.CompareTag("REMOVEALL"))
+        {
+            attributes = 0;
+        }
     }
        
 }
